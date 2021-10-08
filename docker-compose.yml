@@ -1,0 +1,25 @@
+version: "3"
+services:
+  server:
+    image: nginx-test-server
+    build:
+      context: ./server
+      dockerfile: server.dockerfile
+  aiohttp-chardet:
+    image: aiohttp-legacy
+    build:
+      context: ./aiohttp
+      dockerfile: client.dockerfile
+      args:
+        WITH_CHARSET_NORMALIZER: 0
+    depends_on:
+      - server
+  aiohttp-next:
+    image: aiohttp-next
+    build:
+      context: ./aiohttp
+      dockerfile: client.dockerfile
+      args:
+        WITH_CHARSET_NORMALIZER: 1
+    depends_on:
+      - server
