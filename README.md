@@ -7,6 +7,9 @@ aiohttp with charset-normalizer
 - alpine linux
 - nginx 1.21
 - python 3.9
+- aiohttp _dev-master_
+- chardet 4.0.0 (_aiohttp-chardet_)
+- charset-normalizer 2.0.6 (_aiohttp-next_)
 
 Prepare the environment 
 
